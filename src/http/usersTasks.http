@@ -1,0 +1,19 @@
+### Assign a task to a user (many-to-many relationship)
+PATCH http://localhost:3000/users/77c292d3-7c36-44ea-97e1-3bf85d26659a/tasks
+Content-Type: application/json
+
+{
+  "taskIds": ["068b2074-cd47-4294-9f2a-147a840a3996", "bd5de913-d8af-462b-af92-473d96613f68"]
+}
+
+###
+
+### Get tasks assigned to a specific user
+GET http://localhost:3000/users/77c292d3-7c36-44ea-97e1-3bf85d26659a/tasks
+
+###
+
+### Remove a task from a user
+DELETE http://localhost:3000/users/77c292d3-7c36-44ea-97e1-3bf85d26659a/tasks/bd5de913-d8af-462b-af92-473d96613f68
+
+### Replace {{userId}} and {{taskId}} with the actual user and task IDs.

@@ -1,0 +1,40 @@
+### Create a new user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "userName": "johndoe",
+  "email": "john.doe@example.com",
+  "password": "strongpassword123"
+}
+
+###
+
+### Get all users
+GET http://localhost:3000/users
+
+###
+
+### Get a specific user by ID
+GET http://localhost:3000/users/d8aa2342-6ca0-4e13-9652-f69ebcf76254
+
+###
+
+### Update a user
+PATCH http://localhost:3000/users/d8aa2342-6ca0-4e13-9652-f69ebcf76254
+Content-Type: application/json
+
+{
+  "name": "John Updated",
+  "userName": "johnupdated",
+  "email": "john.updated@example.com",
+  "password": "newstrongpassword"
+}
+
+###
+
+### Delete a user
+DELETE http://localhost:3000/users/d8aa2342-6ca0-4e13-9652-f69ebcf76254
+
+### Replace {{userId}} with the actual ID of the user you want to delete.
