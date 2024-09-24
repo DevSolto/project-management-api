@@ -1,0 +1,56 @@
+
+### Create a new project
+POST http://localhost:3000/projects/77c292d3-7c36-44ea-97e1-3bf85d26659a
+Content-Type: application/json
+
+{
+  "name": "Platform Development",
+  "description": "A project to develop a new web platform",
+  "endDate": "2024-12-31T00:00:00.000Z"
+}
+
+
+###
+
+### Get all projects
+GET http://localhost:3000/projects
+
+###
+
+### Get a specific project by ID
+GET http://localhost:3000/projects/716e270a-9b50-4aa3-8dd2-b7ec1ca6446d
+
+###
+
+### Update a project
+PATCH http://localhost:3000/projects/716e270a-9b50-4aa3-8dd2-b7ec1ca6446d
+Content-Type: application/json
+
+{
+  "name": "Updated Project Name",
+  "description": "Updated project description",
+  "endDate": "2024-11-30"
+}
+
+###
+
+### Delete a project
+DELETE http://localhost:3000/projects/716e270a-9b50-4aa3-8dd2-b7ec1ca6446d
+
+###
+
+### Assign members to a project
+PATCH http://localhost:3000/projects/f7cfbba4-8b69-423e-9219-fa6a1b5d2842/members
+Content-Type: application/json
+
+{
+  "members": ["userId3", "userId4"]
+}
+
+###
+
+### Get all members of a specific project
+GET http://localhost:3000/projects/123e4567-e89b-12d3-a456-426614174000/members
+
+###
+

@@ -4,8 +4,8 @@ Content-Type: application/json
 
 {
   "name": "John Doe",
-  "userName": "johndoe",
-  "email": "john.doe@example.com",
+  "userName": "user",
+  "email": "jn.doe4@example.com",
   "password": "strongpassword123"
 }
 
@@ -22,14 +22,12 @@ GET http://localhost:3000/users/d8aa2342-6ca0-4e13-9652-f69ebcf76254
 ###
 
 ### Update a user
-PATCH http://localhost:3000/users/d8aa2342-6ca0-4e13-9652-f69ebcf76254
+PATCH http://localhost:3000/users/77c292d3-7c36-44ea-97e1-3bf85d26659a
 Content-Type: application/json
 
 {
   "name": "John Updated",
-  "userName": "johnupdated",
-  "email": "john.updated@example.com",
-  "password": "newstrongpassword"
+  "userName": "johnupdated"
 }
 
 ###

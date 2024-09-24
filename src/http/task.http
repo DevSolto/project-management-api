@@ -5,7 +5,8 @@ Content-Type: application/json
 {
   "name": "New Task",
   "description": "Description of the new task",
-  "dueDate": "2024-09-30T12:00:00Z"
+  "dueDate": "2024-09-30T12:00:00Z",
+  "creatorId": "4ab34eae-41c4-4a2a-aeec-c02c03e7c09f"
 }
 
 ###

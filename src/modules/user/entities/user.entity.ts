@@ -1,28 +1,39 @@
-import { Task } from 'src/modules/tasks/entities/task.entity'
-import { Column, Entity, JoinColumn, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm'
+import { Project } from 'src/modules/project/entities/project.entity';
+import { Task } from 'src/modules/task/entities/task.entity';
+import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  id: string
+  id: string;
 
   @Column()
-  name: string
+  name: string;
 
   @Column({
     unique: true
   })
-  userName: string
+  userName: string;
 
   @Column({
     unique: true
   })
-  email: string
+  email: string;
 
   @Column()
-  password: string
+  password: string;
 
   @ManyToMany(() => Task)
   @JoinTable()
-  tasks: Task[]
+  tasks: Task[];
+
+  @ManyToMany(() => Project)
+  @JoinTable()
+  projects: Project[];
+
+  @OneToMany(() => Project, (project) => project.creator)
+  createdProjects: Project[];
+
+  @OneToMany(() => Task, (task) => task.creator)
+  createdTasks: Task[];
 }

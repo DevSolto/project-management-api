@@ -17,4 +17,8 @@ export class CreateTaskDto {
   @IsDate()
   @Type(() => Date)
   dueDate: Date;
+
+  @ApiProperty({ description: 'Id do usuário que está criando a task' })
+  @IsString()
+  creatorId: string;
 }

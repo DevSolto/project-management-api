@@ -1,10 +1,16 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './modules/user/user.module';
-import { TasksModule } from './modules/tasks/tasks.module';
+import { TaskModule } from './modules/task/task.module';
+import { ProjectModule } from './modules/project/project.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'database.sqlite',
@@ -12,7 +18,9 @@ import { TasksModule } from './modules/tasks/tasks.module';
       synchronize: true,
     }),
     UserModule,
-    TasksModule
+    TaskModule,
+    ProjectModule,
+    AuthModule
   ],
   controllers: [],
   providers: [],
